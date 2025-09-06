@@ -1,0 +1,111 @@
+<Window x:Class="WpfApp2.SalidaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Registro de Salidas - Sistema de Transportes" Height="600" Width="500"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#FF5722" Margin="10,10,10,0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="REGISTRO DE SALIDAS" 
+                           HorizontalAlignment="Center" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <TextBlock Text="Control de salida de vehiculos" 
+                           HorizontalAlignment="Center" 
+                           FontSize="12" 
+                           Foreground="White"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Form -->
+        <ScrollViewer Grid.Row="1" Margin="30,20">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Tipo Documento -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Tipo Documento:" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cmbTipoDocumento" Height="30" Margin="0,0,0,15">
+                        <ComboBoxItem Content="DNI"/>
+                        <ComboBoxItem Content="Pasaporte"/>
+                        <ComboBoxItem Content="Carnet de Extranjeria"/>
+                    </ComboBox>
+                    
+                    <!-- Numero Documento -->
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Numero Documento:" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtNumeroDocumento" Height="30" Margin="0,0,0,15"/>
+                    
+                    <!-- Peso -->
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Peso (Kg):" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtPeso" Height="30" Margin="0,0,0,15"/>
+                    
+                    <!-- Tipo Auto -->
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Tipo Auto:" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <ComboBox Grid.Row="3" Grid.Column="1" x:Name="cmbTipoAuto" Height="30" Margin="0,0,0,15">
+                        <ComboBoxItem Content="Camion"/>
+                        <ComboBoxItem Content="Trailer"/>
+                        <ComboBoxItem Content="Furgoneta"/>
+                        <ComboBoxItem Content="Camioneta"/>
+                    </ComboBox>
+                    
+                    <!-- Nombre Transportista -->
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Nombre Transportista:" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtNombreTransportista" Height="30" Margin="0,0,0,15"/>
+                    
+                    <!-- Fecha y Hora -->
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Fecha y Hora:" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <DatePicker Grid.Row="5" Grid.Column="1" x:Name="dpFechaHora" Height="30" Margin="0,0,0,15"/>
+                    
+                    <!-- Peso de Ingreso -->
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Peso de Ingreso (Kg):" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtPesoIngreso" Height="30" Margin="0,0,0,15"/>
+                    
+                    <!-- Peso de Salida -->
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Peso de Salida (Kg):" FontWeight="Bold" Margin="0,0,10,5"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" x:Name="txtPesoSalida" Height="30" Margin="0,0,0,15"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+        
+        <!-- Footer Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+            <Button x:Name="btnGuardar" Content="GUARDAR" 
+                    Width="100" Height="35" FontSize="12" FontWeight="Bold"
+                    Background="#4CAF50" Foreground="White" BorderThickness="0"
+                    Margin="0,0,10,0" Click="btnGuardar_Click"/>
+            <Button x:Name="btnLimpiar" Content="LIMPIAR" 
+                    Width="100" Height="35" FontSize="12" FontWeight="Bold"
+                    Background="#FF9800" Foreground="White" BorderThickness="0"
+                    Margin="0,0,10,0" Click="btnLimpiar_Click"/>
+            <Button x:Name="btnCerrar" Content="CERRAR" 
+                    Width="100" Height="35" FontSize="12" FontWeight="Bold"
+                    Background="#9E9E9E" Foreground="White" BorderThickness="0"
+                    Click="btnCerrar_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,106 @@
+<Window x:Class="WpfApp2.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Menu Principal - Sistema de Transportes" Height="400" Width="600"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#2196F3" Margin="10,10,10,0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="MENU PRINCIPAL" 
+                           HorizontalAlignment="Center" 
+                           FontSize="24" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <TextBlock Text="Sistema de Gestion de Transportes" 
+                           HorizontalAlignment="Center" 
+                           FontSize="14" 
+                           Foreground="White"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Menu Options -->
+        <UniformGrid Grid.Row="1" Rows="1" Columns="3" Margin="20">
+            <!-- Operaciones -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="60" Height="60" Fill="#4CAF50" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="3" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="30" HorizontalAlignment="Center" Margin="0,-50,0,20" Foreground="White"/>
+                    <Button x:Name="btnOperaciones" Content="OPERACIONES" 
+                            Width="150" Height="40" FontSize="14" FontWeight="Bold"
+                            Background="#4CAF50" Foreground="White" BorderThickness="0"
+                            Click="btnOperaciones_Click"/>
+                    <TextBlock Text="* Ingresos&#10;* Salidas" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,10,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Mantenimientos -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="60" Height="60" Fill="#FF9800" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="3" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="30" HorizontalAlignment="Center" Margin="0,-50,0,20" Foreground="White"/>
+                    <Button x:Name="btnMantenimientos" Content="MANTENIMIENTOS" 
+                            Width="150" Height="40" FontSize="14" FontWeight="Bold"
+                            Background="#FF9800" Foreground="White" BorderThickness="0"
+                            Click="btnMantenimientos_Click"/>
+                    <TextBlock Text="* Conductores&#10;* Transportistas&#10;* Camiones&#10;* Productos" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,10,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Reportes -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="60" Height="60" Fill="#2196F3" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="3" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="30" HorizontalAlignment="Center" Margin="0,-50,0,20" Foreground="White"/>
+                    <Button x:Name="btnReportes" Content="REPORTES" 
+                            Width="150" Height="40" FontSize="14" FontWeight="Bold"
+                            Background="#2196F3" Foreground="White" BorderThickness="0"
+                            Click="btnReportes_Click"/>
+                    <TextBlock Text="* Cargas&#10;* Ingresos&#10;* Salidas" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,10,0,0"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+        
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,0">
+            <Button x:Name="btnCerrarSesion" Content="Cerrar Sesion" 
+                    Width="100" Height="30" FontSize="12"
+                    Background="#F44336" Foreground="White" BorderThickness="0"
+                    Click="btnCerrarSesion_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

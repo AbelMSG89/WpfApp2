@@ -1,0 +1,127 @@
+<Window x:Class="WpfApp2.MantenimientosWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Mantenimientos - Sistema de Transportes" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#FF9800" Margin="10,10,10,0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="MANTENIMIENTOS" 
+                           HorizontalAlignment="Center" 
+                           FontSize="24" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <TextBlock Text="Gestion de Maestros del Sistema" 
+                           HorizontalAlignment="Center" 
+                           FontSize="14" 
+                           Foreground="White"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Maintenance Options -->
+        <UniformGrid Grid.Row="1" Rows="2" Columns="2" Margin="30,20">
+            <!-- Conductores -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="50" Height="50" Fill="#2196F3" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="2" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="25" HorizontalAlignment="Center" Margin="0,-45,0,15" Foreground="White"/>
+                    <Button x:Name="btnConductores" Content="CONDUCTORES" 
+                            Width="150" Height="35" FontSize="12" FontWeight="Bold"
+                            Background="#2196F3" Foreground="White" BorderThickness="0"
+                            Click="btnConductores_Click"/>
+                    <TextBlock Text="Gestion de conductores" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Transportistas -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="50" Height="50" Fill="#4CAF50" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="2" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="25" HorizontalAlignment="Center" Margin="0,-45,0,15" Foreground="White"/>
+                    <Button x:Name="btnTransportistas" Content="TRANSPORTISTAS" 
+                            Width="150" Height="35" FontSize="12" FontWeight="Bold"
+                            Background="#4CAF50" Foreground="White" BorderThickness="0"
+                            Click="btnTransportistas_Click"/>
+                    <TextBlock Text="Gestion de empresas" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Camiones -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="50" Height="50" Fill="#FF5722" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="2" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="25" HorizontalAlignment="Center" Margin="0,-45,0,15" Foreground="White"/>
+                    <Button x:Name="btnCamiones" Content="CAMIONES" 
+                            Width="150" Height="35" FontSize="12" FontWeight="Bold"
+                            Background="#FF5722" Foreground="White" BorderThickness="0"
+                            Click="btnCamiones_Click"/>
+                    <TextBlock Text="Gestion de vehiculos" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Productos -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="50" Height="50" Fill="#9C27B0" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="2" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="25" HorizontalAlignment="Center" Margin="0,-45,0,15" Foreground="White"/>
+                    <Button x:Name="btnProductos" Content="PRODUCTOS" 
+                            Width="150" Height="35" FontSize="12" FontWeight="Bold"
+                            Background="#9C27B0" Foreground="White" BorderThickness="0"
+                            Click="btnProductos_Click"/>
+                    <TextBlock Text="Gestion de productos" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+        
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,0">
+            <Button x:Name="btnVolver" Content="Volver" 
+                    Width="80" Height="30" FontSize="12"
+                    Background="#9E9E9E" Foreground="White" BorderThickness="0"
+                    Click="btnVolver_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

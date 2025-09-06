@@ -1,0 +1,106 @@
+<Window x:Class="WpfApp2.ReportesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Reportes - Sistema de Transportes" Height="400" Width="600"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#2196F3" Margin="10,10,10,0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="REPORTES" 
+                           HorizontalAlignment="Center" 
+                           FontSize="24" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <TextBlock Text="Consultas y Reportes del Sistema" 
+                           HorizontalAlignment="Center" 
+                           FontSize="14" 
+                           Foreground="White"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Reports Options -->
+        <UniformGrid Grid.Row="1" Rows="1" Columns="3" Margin="30,30">
+            <!-- Cargas -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="50" Height="50" Fill="#4CAF50" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="2" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="25" HorizontalAlignment="Center" Margin="0,-45,0,15" Foreground="White"/>
+                    <Button x:Name="btnCargas" Content="CARGAS" 
+                            Width="120" Height="35" FontSize="12" FontWeight="Bold"
+                            Background="#4CAF50" Foreground="White" BorderThickness="0"
+                            Click="btnCargas_Click"/>
+                    <TextBlock Text="Reporte de cargas" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Ingresos -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="50" Height="50" Fill="#2196F3" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="2" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="25" HorizontalAlignment="Center" Margin="0,-45,0,15" Foreground="White"/>
+                    <Button x:Name="btnIngresos" Content="INGRESOS" 
+                            Width="120" Height="35" FontSize="12" FontWeight="Bold"
+                            Background="#2196F3" Foreground="White" BorderThickness="0"
+                            Click="btnIngresos_Click"/>
+                    <TextBlock Text="Reporte de ingresos" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Salidas -->
+            <Border Background="White" Margin="10" CornerRadius="10" BorderBrush="#E0E0E0" BorderThickness="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Ellipse Width="50" Height="50" Fill="#FF5722" Margin="0,0,0,10">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="2" Opacity="0.5"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                    <TextBlock Text="??" FontSize="25" HorizontalAlignment="Center" Margin="0,-45,0,15" Foreground="White"/>
+                    <Button x:Name="btnSalidas" Content="SALIDAS" 
+                            Width="120" Height="35" FontSize="12" FontWeight="Bold"
+                            Background="#FF5722" Foreground="White" BorderThickness="0"
+                            Click="btnSalidas_Click"/>
+                    <TextBlock Text="Reporte de salidas" 
+                               HorizontalAlignment="Center" 
+                               FontSize="10" 
+                               Foreground="Gray" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+        
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,0">
+            <Button x:Name="btnVolver" Content="Volver" 
+                    Width="80" Height="30" FontSize="12"
+                    Background="#9E9E9E" Foreground="White" BorderThickness="0"
+                    Click="btnVolver_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
